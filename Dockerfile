@@ -10,10 +10,11 @@ USER root
 RUN chown -R jovyan:users /home/jovyan && chmod -R 755 /home/jovyan
 
 # Set up AWS cli
-# RUN wget https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip && \
-#     unzip awscli-exe-linux-x86_64.zip && \
-#     ./aws/install && \
-#     rm awscli-exe-linux-x86_64.zip
+RUN wget https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip && \
+    unzip awscli-exe-linux-x86_64.zip && \
+    ./aws/install && \
+    rm awscli-exe-linux-x86_64.zip
+
 # Set up AWS Cloud Development Kit (CDK)
 RUN npm install -g npm
 RUN npm install -g aws-cdk
