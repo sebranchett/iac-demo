@@ -1,0 +1,2 @@
+jupyter-server-proxy
+git+https://github.com/sebranchett/pluto-on-jupyterlab.git
