@@ -13,7 +13,7 @@ class IacDccStack(Stack):
 
         ec2.CfnKeyPair(
             self,
-            id="DCC-KEY_PAIR",
+            id="DCC-KEY-PAIR",
             key_name="ec2-ssh-key"
         )
 
@@ -35,8 +35,7 @@ class IacDccStack(Stack):
             machine_image=ec2.MachineImage.latest_amazon_linux2023(),
             instance_type=ec2.InstanceType("t2.micro"),
             key_name="ec2-ssh-key",
-            vpc=vpc,
-            # role=""
+            vpc=vpc
         )
 
         instance.connections.allow_from_any_ipv4(ec2.Port.tcp(22))
