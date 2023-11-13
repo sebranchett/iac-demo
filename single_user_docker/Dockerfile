@@ -6,6 +6,9 @@ HEALTHCHECK CMD pgrep "jupyter" > /dev/null || exit 1
 
 USER root
 
+RUN sudo apt update
+RUN sudo apt install -y python3-venv
+
 # Set up file permissions
 RUN chown -R jovyan:users /home/jovyan && chmod -R 755 /home/jovyan
 
@@ -22,6 +25,7 @@ RUN mkdir -p /home/jovyan/.aws
 COPY config /home/jovyan/.aws/config
 
 USER ${NB_USER}
+ENV PATH="${PATH}:/opt/conda/bin"
 
 # JupyterLab setup
 COPY requirements.txt /tmp/requirements.txt

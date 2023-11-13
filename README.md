@@ -10,6 +10,10 @@ TU Delft DCC coding session 24th November 2023.
 ### Demo
 Create an EC2 with defaults, plus key-pair for ssh access.
 
+Show you can log in.
+
+Delete EC2, Key-pair and VPC.
+
 ### Hands-on session
 Use [this JupyterHub](https://github.com/sebranchett/ecs-jupyterhub-pluto-python), with single user Docker image created using the files in this [single_user_docker directory](./single_user_docker/).
 
