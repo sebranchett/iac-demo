@@ -2,9 +2,6 @@
 1. Log in with NetId and wait 2 minutes
 1. Open terminal window in JupyterLab
 ```
-export PATH=$PATH:/opt/conda/bin
-apt install python3.10-venv
-
 git config --global user.email "you@example.com"
 git config --global user.name "Your Name"
 
@@ -15,6 +12,9 @@ cdk init app --language=python
 
 git status  # under version control
 
-source .venv/bin/activate or source .venv/Scripts/activate
+source .venv/bin/activate  # start virtual environment
 pip install -r requirements.txt
+
+cdk synth
 ```
+
