@@ -12,7 +12,7 @@ Create an EC2 with defaults, plus key-pair for ssh access.
 
 Show you can log in.
 
-Delete EC2, Key-pair and VPC.
+Delete EC2, Key-pair and SecurityGroup.
 
 ### Hands-on session
 Use [this JupyterHub](https://github.com/sebranchett/ecs-jupyterhub-pluto-python), with single user Docker image created using the files in this [single_user_docker directory](./single_user_docker/).
