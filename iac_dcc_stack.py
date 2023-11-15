@@ -28,11 +28,11 @@ class IacDccStack(Stack):
                 )
             ]
         )
-
+        
         instance = ec2.Instance(
             self,
             id="DCC-EC2",
-            machine_image=ec2.MachineImage.latest_amazon_linux2023(),
+            machine_image=ec2.MachineImage.latest_amazon_linux(),
             instance_type=ec2.InstanceType("t2.micro"),
             key_name="ec2-ssh-key",
             vpc=vpc
