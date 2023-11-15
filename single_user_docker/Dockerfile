@@ -6,8 +6,6 @@ HEALTHCHECK CMD pgrep "jupyter" > /dev/null || exit 1
 
 USER root
 
-RUN sudo apt update
-RUN sudo apt install -y python3-venv
 
 # Set up file permissions
 RUN chown -R jovyan:users /home/jovyan && chmod -R 755 /home/jovyan
@@ -19,13 +17,11 @@ RUN wget https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip && \
     rm awscli-exe-linux-x86_64.zip
 
 # Set up AWS Cloud Development Kit (CDK)
-RUN npm install -g npm
 RUN npm install -g aws-cdk
 RUN mkdir -p /home/jovyan/.aws
 COPY config /home/jovyan/.aws/config
 
 USER ${NB_USER}
-ENV PATH="${PATH}:/opt/conda/bin"
 
 # JupyterLab setup
 COPY requirements.txt /tmp/requirements.txt
@@ -40,3 +36,4 @@ COPY jupyter_server_config.py .jupyter/jupyter_server_config.py
 RUN mkdir -p /home/jovyan/reference
 
 WORKDIR /home/jovyan/work
+
